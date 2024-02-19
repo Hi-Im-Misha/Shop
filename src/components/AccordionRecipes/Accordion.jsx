@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AccordionRecipes.css';
+import classes from './AccordionRecipes.module.css'
 
 function Accordion({ id, info, buttonLabel, count, onUpdate, onDelete, onUpdateLabel, onUpdateCount }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,25 +19,26 @@ function Accordion({ id, info, buttonLabel, count, onUpdate, onDelete, onUpdateL
     };
 
     return (
-        <div class="block">
-            <button onClick={handleToggle}>{blockLabel}</button>
-
+        <div className={`${classes.block}`}>
+            <button className={`${classes.ButtonInfo}`}
+                onClick={handleToggle}>{blockLabel}
+            </button>
+            
             {isOpen && (
-            <div>
-                <h3>Информация</h3>
+                <div className={`${classes.boxtitle}`}>
                 {isEditing ? (
                     <div>
-                        <p><input type="text" value={blockLabel} onChange={handleLabelChange} /></p>
-                        <p><textarea class="WindowСhang" value={blockInfo} onChange={handleChange} /></p>
+                    <p><input type="text" value={blockLabel} onChange={handleLabelChange} /></p>
+                    <p><textarea className={`${classes.textarea}`} value={blockInfo} onChange={handleChange} /></p>
                     </div>
                 ) : (
-                <div>
-                    <pre class="RecipeInfo">{blockInfo}</pre>
+                    <div>
+                    <p className={`${classes.text}`}>{blockInfo}</p>
+                    </div>
+                )}
+                <button className={`${classes.buttonChange}`} onClick={handleEdit}>{isEditing ? 'Сохранить' : 'Изменить'}</button>
+                <button className={`${classes.buttonChange}`} onClick={() => onDelete(id)}>Удалить блок</button>
                 </div>
-            )}
-                <button onClick={handleEdit}>{isEditing ? 'Сохранить' : 'Изменить'}</button>
-                <button onClick={() => onDelete(id)}>Удалить блок</button>
-            </div>
             )}
         </div>
         );

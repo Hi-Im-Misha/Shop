@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classes from './infoSection.module.css'
 
 function InfoBlock({ id, info, buttonLabel, count, onUpdate, onDelete, onUpdateLabel, onUpdateCount }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,30 +24,31 @@ function InfoBlock({ id, info, buttonLabel, count, onUpdate, onDelete, onUpdateL
   };
 
   return (
-    <div>
-      <button onClick={handleToggle}>{blockLabel}</button>
-      <span> Кол-во: {blockCount}</span>
-
-      {isOpen && (
-        <div>
-          <h2>Информация</h2>
-          {isEditing ? (
-            <div>
-              <p><input type="text" value={blockLabel} onChange={handleLabelChange} /></p>
-              <p><textarea value={blockInfo} onChange={handleChange} style={{ width: '200px', height: '200px' }} /></p>
-              <p><input type="number" step="0.20" value={blockCount} onChange={handleCountChange} /></p>
-            </div>
-          ) : (
-            <div>
-              <pre>{blockInfo}</pre>
-              <p>Количество: {blockCount}</p>
-            </div>
-          )}
-          <button onClick={handleEdit}>{isEditing ? 'Сохранить' : 'Изменить'}</button>
-          <button onClick={() => onDelete(id)}>Удалить блок</button>
-        </div>
-      )}
-    </div>
+    <div className={`${classes.block}`}>
+        <button className={`${classes.ButtonInfo}`} 
+          onClick={handleToggle}>{blockLabel}
+        </button>
+        <span> Кол-во: {blockCount}</span>
+        
+        {isOpen && (
+          <div className={`${classes.boxtitle}`}>
+            {isEditing ? (
+              <div>
+                <p><input type="text" value={blockLabel} onChange={handleLabelChange} /></p>
+                <p><textarea value={blockInfo} onChange={handleChange} /></p>
+                <p><input type="number" step="0.20" value={blockCount} onChange={handleCountChange} /></p>
+              </div>
+            ) : (
+              <div>
+                <p>{blockInfo}</p>
+                <p>Количество: {blockCount}</p>
+              </div>
+            )}
+            <button className={`${classes.buttonChange}`} onClick={handleEdit}>{isEditing ? 'Сохранить' : 'Изменить'}</button>
+            <button className={`${classes.buttonChange}`} onClick={() => onDelete(id)}>Удалить блок</button>
+          </div>
+        )}
+      </div>
   );
 }
 

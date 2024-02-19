@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './components/Header/Header'
-import TabsSection from './components/TabsSection'
-import DifferencesSection from './components/DifferenceseSection'
+import HeaderTabSection from './components/Header/Header'
+import DifferencesSection from './components/Calculator/DifferenceseSection'
 import StateVsRef from './components/AccordionRecipes/AccordionRecipesSection'
 import InfoModal from './components/InfoSection/InfoModal'
-
+import Footer from './components/Footer/Footer'
 
 export default function App() {
   const [visible, setVisible] = useState(true) 
@@ -13,16 +12,15 @@ export default function App() {
 
   return (
     <>
-      {visible &&<Header  />}
+      {visible &&<HeaderTabSection   active={tab} onChange={(current) => setTab(current)}/>}
       <main>
-        <TabsSection active={tab} onChange={(current) => setTab(current)} />
-        
         {tab == 'assortment' && <InfoModal />}
 
         {tab == 'calculator' && <DifferencesSection />}
 
         {tab == 'recipes' && <StateVsRef />}
       </main>
+      {visible &&<Footer />}
     </>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import InfoBlock from './InfoBlock';
+import classes from './infoSection.module.css'
 
 function InfoModal() {
   const initialBlocks = JSON.parse(localStorage.getItem('blocks')) || [];
@@ -34,11 +35,12 @@ function InfoModal() {
     localStorage.setItem('blocks', JSON.stringify(blocks));
   }, [blocks]);
 
+  
   return (
     <div>
-      <button onClick={addBlock}>Добавить Товар</button>
-      <p>Общее количество напитков: {getTotalCount()}</p>
-      {blocks.map(block => (
+      <button className={`${classes.btn} ${classes["icon-info"]}`} onClick={addBlock}>Добавить Товар</button>
+      <p className={`${classes.TotalDrinks}`}>Общее количество напитков: {getTotalCount()}</p>
+        {blocks.map(block => (
         <InfoBlock key={block.id} id={block.id} info={block.info} buttonLabel={block.label} count={block.count} onUpdate={updateBlock} onDelete={deleteBlock} onUpdateLabel={updateLabel} onUpdateCount={updateCount} />
       ))}
     </div>

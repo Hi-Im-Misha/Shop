@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useInput from '/src/hooks/useInput';
 import Accordion from './Accordion';
+import classes from './AccordionRecipes.module.css'
 
 
 function EffectSection() {
@@ -30,15 +31,14 @@ function EffectSection() {
     }, [accordionblocks]);
 
     return (
-        <section>
-            <h3>Поиск</h3>
+        <section className={`${classes.sectionblock}`}>
 
-            <input type="text" className="control" {...input} />
-            <button onClick={addBlock}>Добавить аккордеон</button>
+            <input type="text" className={`${classes.control}`} {...input} placeholder="Введи название рецепта" />
+            <button className={`${classes.btn} ${classes["icon-info"]}`} onClick={addBlock}>Добавить Рецепт</button>
 
             {accordionblocks
                 .filter(block => block.label.toLowerCase().includes(input.value.toLowerCase()))
-                .map((block, index) => (
+                .map((block) => (
                     <Accordion key={block.id} id={block.id} info={block.info} buttonLabel={block.label} onUpdate={updateBlock} onDelete={deleteBlock} onUpdateLabel={updateLabel} >
                         {block.info}
                     </Accordion>
