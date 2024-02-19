@@ -1,6 +1,6 @@
 import Button from '../Buttom/Button'
 import classes from '../Buttom/Button.module.css'
-import './header.css'
+import './Header.css'
 
 export default function HeaderTabSection({active, onChange}) {
     return (
