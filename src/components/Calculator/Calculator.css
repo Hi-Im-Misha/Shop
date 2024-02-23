@@ -108,6 +108,7 @@ h3{
   border: 0.125rem solid rgba(0, 0, 0, 0.125);
   border-radius: 0.5rem;
   height: 100%;
+  width: 100%;
 }
 
 .card-group {
@@ -133,9 +134,12 @@ h3{
   flex: 1 1;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 490px) {
   .flex-container {
       flex-direction: column;
+  }
+  .box{
+    flex-direction: column;
   }
 }
 

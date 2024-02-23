@@ -125,9 +125,12 @@ textarea{
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 600) {
   .quantityindic {
       /* Ваши стили для мобильных устройств здесь */
       padding: 15px; /* Добавлено для одинаковой ширины блоков на мобильных устройствах */
+  }
+  .ButtonInfo{
+    width: 100%;
   }
 }
