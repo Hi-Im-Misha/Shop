@@ -11,6 +11,8 @@
 }
 
 
+
+
 textarea{
   width: 200px;
   height: 200px;
@@ -85,7 +87,7 @@ textarea{
   margin: auto;
   width: 400px;
   position: relative;
-  background-color: rgb(245, 244, 244);
+  background-color: rgb(230, 227, 227);
   height: 64px;
   transition: all .15s ease-in-out;
 }
@@ -120,4 +122,12 @@ textarea{
   margin: 0 10px;
   background-color: #1abc9c;
   color: aliceblue;
+}
+
+
+@media (max-width: 600px) {
+  .quantityindic {
+      /* Ваши стили для мобильных устройств здесь */
+      padding: 15px; /* Добавлено для одинаковой ширины блоков на мобильных устройствах */
+  }
 }

@@ -28,7 +28,7 @@ function InfoBlock({ id, info, buttonLabel, count, onUpdate, onDelete, onUpdateL
         <button className={`${classes.ButtonInfo}`} 
           onClick={handleToggle}>{blockLabel}
         </button>
-        <span> Кол-во: {blockCount}</span>
+        <span className={`${classes.quantityindic}`}> Кол-во: {blockCount}</span>
         
         {isOpen && (
           <div className={`${classes.boxtitle}`}>
