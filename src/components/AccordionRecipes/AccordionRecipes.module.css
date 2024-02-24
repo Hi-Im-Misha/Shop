@@ -97,6 +97,7 @@
 
 
 .block{
+    width: 100%;
     display: block;
     justify-content: center;
     align-items: center;
@@ -111,7 +112,7 @@
 
 .ButtonInfo{
     margin: auto;
-    width: 800px;
+    width: 100%;
     position: relative;
     background-color: rgb(245, 244, 244);
     height: 64px;
@@ -148,4 +149,12 @@
     margin: 0 10px;
     background-color: #1abc9c;
     color: aliceblue;
+}
+
+
+
+@media (max-width: 490px) {
+    .block{
+        width: 100%;
+    }
 }

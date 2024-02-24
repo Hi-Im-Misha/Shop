@@ -75,7 +75,7 @@ textarea{
   display: block;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+
 }
 
 .block span {
@@ -85,7 +85,7 @@ textarea{
 
 .ButtonInfo{
   margin: auto;
-  width: 400px;
+  width: 50%;
   position: relative;
   background-color: rgb(230, 227, 227);
   height: 64px;
@@ -125,10 +125,9 @@ textarea{
 }
 
 
-@media (max-width: 600) {
+@media (max-width: 490px) {
   .quantityindic {
-      /* Ваши стили для мобильных устройств здесь */
-      padding: 15px; /* Добавлено для одинаковой ширины блоков на мобильных устройствах */
+      padding: 15px;
   }
   .ButtonInfo{
     width: 100%;
