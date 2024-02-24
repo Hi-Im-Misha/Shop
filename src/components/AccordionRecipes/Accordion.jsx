@@ -28,7 +28,7 @@ function Accordion({ id, info, buttonLabel, count, onUpdate, onDelete, onUpdateL
                 <div className={`${classes.boxtitle}`}>
                 {isEditing ? (
                     <div>
-                    <p><input type="text" value={blockLabel} onChange={handleLabelChange} /></p>
+                    <p><textarea className={`${classes.inputarea}`} value={blockLabel} onChange={handleLabelChange} /></p>
                     <p><textarea className={`${classes.textarea}`} value={blockInfo} onChange={handleChange} /></p>
                     </div>
                 ) : (

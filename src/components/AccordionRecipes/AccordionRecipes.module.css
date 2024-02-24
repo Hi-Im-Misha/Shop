@@ -82,6 +82,12 @@
     content: "\f067";
 }
 
+.inputarea{
+    width: 600px;
+    height: 100%;
+}
+
+
 .textarea{
     width: 600px;
     height: 300px;
@@ -153,8 +159,14 @@
 
 
 
-@media (max-width: 490px) {
+@media (max-width: 600px) {
     .block{
+        width: 100%;
+    }
+    .textarea{
+        width: 100%;
+    }
+    .inputarea{
         width: 100%;
     }
 }
